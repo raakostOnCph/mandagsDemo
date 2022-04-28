@@ -4,15 +4,21 @@ import dat.startcode.model.exceptions.DatabaseException;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.util.Date;
 
-public class About extends Command
+public class Kronhjort extends Command
 {
+
+
     @Override
     String execute(HttpServletRequest request, HttpServletResponse response) throws DatabaseException
     {
-        String hilsen = "Her kan du se hvordan man sender indhold til en jsp-side.";
-        request.setAttribute("hilsen", hilsen);
-        //return "Kronhjort";
-       return "about";
+        String tid = LocalTime.now().toString();
+        request.setAttribute("tid", tid);
+
+
+        return "Kronhjort";
     }
 }

@@ -16,13 +16,20 @@ abstract class Command
         commands.put("login", new Login());
         commands.put("logout", new Logout());
         commands.put("about", new About());
+        commands.put("kronhjort", new Kronhjort());
+        commands.put("timmi", new Timmi());
+        commands.put("march", new March());
+        commands.put("otto", new Otto());
     }
 
     static Command from( HttpServletRequest request ) {
-        String commandName = request.getParameter( "command" );
+
         if ( commands == null ) {
             initCommands();
         }
+
+        String commandName = request.getParameter( "command" );
+
         return commands.getOrDefault(commandName, new UnknownCommand() );   // unknowncommand er default.
     }
 
