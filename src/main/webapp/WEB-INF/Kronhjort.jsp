@@ -35,6 +35,11 @@ Klokken er ${requestScope.tid}, så vi skal snart have frokost !
     <input type="submit"  value="gå til timmi"/>
 </form>
 
+<form action="fc/login" method="post">
+    <input type="hidden" name="command" value="fiskbak"/>
+    <input type="submit"  value="gå til fiskbak"/>
+</form>
+
 
 
 </body>
